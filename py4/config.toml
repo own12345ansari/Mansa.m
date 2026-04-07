@@ -1,0 +1,37 @@
+# .streamlit/config.toml
+# MANSA — Gold Intelligence Platform — Streamlit configuration
+
+[server]
+# Prevent Streamlit from opening a browser tab automatically in production
+headless            = true
+# Disable the file watcher in production (reduces CPU usage)
+runOnSave           = false
+# Security: disable the component communication port in production
+enableCORS          = false
+enableXsrfProtection = true
+# Maximum upload size in MB
+maxUploadSize       = 10
+
+[browser]
+# Disable usage statistics reporting
+gatherUsageStats    = false
+# Shown in browser tab
+serverAddress       = "localhost"
+
+[theme]
+# Base theme — MANSA uses its own CSS so this is just a sensible dark fallback
+base                = "dark"
+backgroundColor     = "#050408"
+secondaryBackgroundColor = "#080610"
+textColor           = "#F0E8D5"
+font                = "serif"
+
+[runner]
+# Silence deprecation warnings in production
+magicEnabled        = false
+fastReruns          = true
+
+[logger]
+# Set to "warning" in production, "debug" for local development
+level               = "warning"
+messageFormat       = "%(asctime)s %(levelname)s %(name)s: %(message)s"
